@@ -1,0 +1,9 @@
+@import "./var.scss";
+
+@function strip-units($number){
+  @return $number / ($number * 0 + 1);
+}
+
+@function responsive($l) {
+  @return unquote(strip-units($l) / strip-units($root-width) * 100 + "vw");
+}

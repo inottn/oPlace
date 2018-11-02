@@ -1,0 +1,142 @@
+.home {
+  max-width: 1500px;
+  width: 100%;
+  font-size: 0;
+}
+
+.home .place {
+  position: relative;
+  display: inline-block;
+  max-height: 800px;
+  width: 25%;
+  height: 53.3vw;
+  background-color: #303030;
+  box-shadow: 8px 0px 15px 0px rgba(0, 0, 0, 0.35);
+}
+
+.home .place::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 25%;
+  background-image: linear-gradient(0deg, #373c7a 0%, rgba(55, 60, 122, 0.41) 59%, rgba(155, 158, 189, 0.09) 91%, rgba(255, 255, 255, 0) 100%);
+  z-index: 199;
+}
+
+.home .place .order-number {
+  position: absolute;
+  top: 3%;
+  right: 7.2%;
+  font-family: BebasNeueBold;
+  font-size: 200px;
+}
+
+.home .place .place-name {
+  position: absolute;
+  bottom: 8.75%;
+  left: 12%;
+  font-family: BebasNeueBold;
+  font-size: 100px;
+  color: #ffffff;
+  z-index: 200;
+}
+
+.home .Paris {
+  background-image: url("../images/Paris.png");
+  background-position: -620px 0px;
+  z-index: 100;
+  transition: transform .6s;
+}
+
+.home .Paris.hide-left {
+  transform: translateX(-100%);
+}
+
+.home .Paris .order-number {
+  color: #ffffff;
+  opacity: .09;
+}
+
+.home .Dubai {
+  background-image: url("../images/Dubai.png");
+  background-position: -300px -70px;
+  z-index: 99;
+  transition: transform .6s;
+}
+
+.home .Dubai.hide-left {
+  transform: translateX(-200%);
+}
+
+.home .Dubai.hide-right {
+  transform: translateX(300%);
+}
+
+.home .Dubai .order-number {
+  color: #ffffff;
+  opacity: .09;
+}
+
+.home .Brazil {
+  background-image: url("../images/Brazil.png");
+  background-position: -680px -150px;
+  z-index: 98;
+  transition: transform .6s;
+}
+
+.home .Brazil.hide-left {
+  transform: translateX(-300%);
+}
+
+.home .Brazil.hide-right {
+  transform: translateX(200%);
+}
+
+.home .Brazil .order-number {
+  color: #303030;
+  opacity: .16;
+}
+
+.home .India {
+  background-image: url("../images/India.png");
+  background-position: -350px 0px;
+  z-index: 97;
+  transition: transform .6s;
+}
+
+.home .India.hide-right {
+  transform: translateX(100%);
+}
+
+.home .India .order-number {
+  color: #303030;
+  opacity: .16;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body, button, ul, li, h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+  padding: 0;
+}
+
+button, input {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+ul, li {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/*# sourceMappingURL=main.css.map */
