@@ -3,11 +3,16 @@
 $place-z-index: 100;
 
 .home {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
   max-width: 1500px;
   width: 100%;
   font-size: 0;
+  overflow: hidden;
 
   .place {
+    flex-shrink: 0;
     position: relative;
     display: inline-block;
     max-height: 800px;
@@ -15,6 +20,7 @@ $place-z-index: 100;
     height: 53.3vw;
     background-color: #303030;
     box-shadow: 8px 0px 15px 0px rgba(0, 0, 0, 0.35);
+    overflow: hidden;
     
     &::after {
       content: "";
@@ -27,12 +33,17 @@ $place-z-index: 100;
       z-index: $place-z-index * 2 - 1;
     }
 
+    .place-image {
+      transition: transform .6s;
+    }
+
     .order-number {
       position: absolute;
       top: 3%;
       right: 7.2%;
       font-family: BebasNeueBold;
       font-size: 200px;
+      transition: opacity .3s;
     }
 
     .place-name {
@@ -43,17 +54,26 @@ $place-z-index: 100;
       font-size: 100px;
       color: #ffffff;
       z-index: $place-z-index * 2;
+      transition: opacity .3s;
     }
   }
 
   .Paris {
-    background-image: url("../images/Paris.png");
-    background-position: -620px 0px;
     z-index: $place-z-index;
-    transition: transform .6s;
+    transition: margin-left .6s, width .6s, transform .6s;
 
     &.hide-left {
-      transform: translateX(-100%)
+      margin-left: -25%;
+    }
+
+    &.click {
+      .place-image {
+        transform: translateX(8%) scale(1.2);
+      }
+    }
+
+    .place-image {
+      transform: translateX(-48%);
     }
 
     .order-number {
@@ -63,17 +83,21 @@ $place-z-index: 100;
   }
 
   .Dubai {
-    background-image: url("../images/Dubai.png");
-    background-position: -300px -70px;
     z-index: $place-z-index - 1;
-    transition: transform .6s;
+    transition: margin-left .6s, width .6s, transform .6s;
 
     &.hide-left {
-      transform: translateX(-200%)
+      margin-left: -25%;
     }
 
-    &.hide-right {
-      transform: translateX(300%)
+    &.click {
+      .place-image {
+        transform: translateX(7%) scale(1.2);
+      }
+    }
+
+    .place-image {
+      transform: translateX(-22%);
     }
 
     .order-number {
@@ -83,17 +107,21 @@ $place-z-index: 100;
   }
 
   .Brazil {
-    background-image: url("../images/Brazil.png");
-    background-position: -680px -150px;
     z-index: $place-z-index - 2;
-    transition: transform .6s;
+    transition: margin-left .6s, width .6s, transform .6s;
 
     &.hide-left {
-      transform: translateX(-300%)
+      margin-left: -25%;
     }
 
-    &.hide-right {
-      transform: translateX(200%)
+    &.click {
+      .place-image {
+        transform: translateX(0) scale(1.2);
+      }
+    }
+
+    .place-image {
+      transform: translateX(-43%);
     }
 
     .order-number {
@@ -103,18 +131,30 @@ $place-z-index: 100;
   }
 
   .India {
-    background-image: url("../images/India.png");
-    background-position: -350px 0px;
     z-index: $place-z-index - 3;
-    transition: transform .6s;
+    transition: width .6s, transform .6s;
 
-    &.hide-right {
-      transform: translateX(100%)
+    &.click {
+      .place-image {
+        transform: translateX(9%) scale(1.2);
+      }
+    }
+
+    .place-image {
+      transform: translateX(-28%);
     }
 
     .order-number {
       color: #303030;
       opacity: .16;
+    }
+  }
+
+  .place.click {
+    width: 100%;
+
+    .order-number, .place-name {
+      opacity: 0;
     }
   }
 }

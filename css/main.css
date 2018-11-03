@@ -1,10 +1,15 @@
 .home {
+  position: relative;
+  display: flex;
+  flex-wrap: nowrap;
   max-width: 1500px;
   width: 100%;
   font-size: 0;
+  overflow: hidden;
 }
 
 .home .place {
+  flex-shrink: 0;
   position: relative;
   display: inline-block;
   max-height: 800px;
@@ -12,6 +17,7 @@
   height: 53.3vw;
   background-color: #303030;
   box-shadow: 8px 0px 15px 0px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
 }
 
 .home .place::after {
@@ -25,12 +31,17 @@
   z-index: 199;
 }
 
+.home .place .place-image {
+  transition: transform .6s;
+}
+
 .home .place .order-number {
   position: absolute;
   top: 3%;
   right: 7.2%;
   font-family: BebasNeueBold;
   font-size: 200px;
+  transition: opacity .3s;
 }
 
 .home .place .place-name {
@@ -41,17 +52,24 @@
   font-size: 100px;
   color: #ffffff;
   z-index: 200;
+  transition: opacity .3s;
 }
 
 .home .Paris {
-  background-image: url("../images/Paris.png");
-  background-position: -620px 0px;
   z-index: 100;
-  transition: transform .6s;
+  transition: margin-left .6s, width .6s, transform .6s;
 }
 
 .home .Paris.hide-left {
-  transform: translateX(-100%);
+  margin-left: -25%;
+}
+
+.home .Paris.click .place-image {
+  transform: translateX(8%) scale(1.2);
+}
+
+.home .Paris .place-image {
+  transform: translateX(-48%);
 }
 
 .home .Paris .order-number {
@@ -60,18 +78,20 @@
 }
 
 .home .Dubai {
-  background-image: url("../images/Dubai.png");
-  background-position: -300px -70px;
   z-index: 99;
-  transition: transform .6s;
+  transition: margin-left .6s, width .6s, transform .6s;
 }
 
 .home .Dubai.hide-left {
-  transform: translateX(-200%);
+  margin-left: -25%;
 }
 
-.home .Dubai.hide-right {
-  transform: translateX(300%);
+.home .Dubai.click .place-image {
+  transform: translateX(7%) scale(1.2);
+}
+
+.home .Dubai .place-image {
+  transform: translateX(-22%);
 }
 
 .home .Dubai .order-number {
@@ -80,18 +100,20 @@
 }
 
 .home .Brazil {
-  background-image: url("../images/Brazil.png");
-  background-position: -680px -150px;
   z-index: 98;
-  transition: transform .6s;
+  transition: margin-left .6s, width .6s, transform .6s;
 }
 
 .home .Brazil.hide-left {
-  transform: translateX(-300%);
+  margin-left: -25%;
 }
 
-.home .Brazil.hide-right {
-  transform: translateX(200%);
+.home .Brazil.click .place-image {
+  transform: translateX(0) scale(1.2);
+}
+
+.home .Brazil .place-image {
+  transform: translateX(-43%);
 }
 
 .home .Brazil .order-number {
@@ -100,19 +122,29 @@
 }
 
 .home .India {
-  background-image: url("../images/India.png");
-  background-position: -350px 0px;
   z-index: 97;
-  transition: transform .6s;
+  transition: width .6s, transform .6s;
 }
 
-.home .India.hide-right {
-  transform: translateX(100%);
+.home .India.click .place-image {
+  transform: translateX(9%) scale(1.2);
+}
+
+.home .India .place-image {
+  transform: translateX(-28%);
 }
 
 .home .India .order-number {
   color: #303030;
   opacity: .16;
+}
+
+.home .place.click {
+  width: 100%;
+}
+
+.home .place.click .order-number, .home .place.click .place-name {
+  opacity: 0;
 }
 
 * {
