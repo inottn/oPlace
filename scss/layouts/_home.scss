@@ -67,14 +67,22 @@ $place-z-index: 100;
       width: 40%;
       height: 100%;
       background-color: #ffffff;
-      opacity: 0;
       transform: translateX(100%);
       transition: transform .6s;
       transition-timing-function: ease-in-out;
 
       &.show {
-        opacity: 1;
-        transform: translateX(0)
+        transform: translateX(0);
+
+        .place-introduction-order-number {
+          opacity: .48;
+          transform: translateY(0);
+        }
+
+        .place-introduction-content {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
 
       .place-introduction-order-number {
@@ -84,29 +92,39 @@ $place-z-index: 100;
         font-family: BebasNeueBold;
         font-size: 194px;
         color: #e1e0e0;
-        opacity: 0.48;
+        opacity: 0;
+        transform: translateY(22.4px);
+        transition: opacity .6s, transform .6s;
+        transition-delay: .8s;
       }
       
-      .place-introduction-title {
-        font-family: PlayfairDisplay-Bold;
-        font-size: 71.25px;
-        color: #303030;
-      }
-
-      .place-introduction-text {
-        margin-top: 18px;
-        width: 80.9%;
-        font-family: Poppins-Regular;
-        font-size: 22.2px;
-        color: #303030;
-        text-align: justify;
-      }
-
-      .read-more {
-        margin-top: 34px;
-        font-family: PlayfairDisplay-Bold;
-        font-size: 24px;
-        color: #0943ba;
+      .place-introduction-content {
+        opacity: 0;
+        transform: translateY(140px);
+        transition: opacity .6s, transform .6s;
+        transition-delay: .6s;
+        
+        .place-introduction-title {
+          font-family: PlayfairDisplay-Bold;
+          font-size: 71.25px;
+          color: #303030;
+        }
+  
+        .place-introduction-text {
+          margin-top: 18px;
+          width: 80.9%;
+          font-family: Poppins-Regular;
+          font-size: 22.2px;
+          color: #303030;
+          text-align: justify;
+        }
+  
+        .read-more {
+          margin-top: 34px;
+          font-family: PlayfairDisplay-Bold;
+          font-size: 24px;
+          color: #0943ba;
+        }
       }
     }
   }

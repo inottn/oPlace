@@ -65,15 +65,23 @@
   width: 40%;
   height: 100%;
   background-color: #ffffff;
-  opacity: 0;
   transform: translateX(100%);
   transition: transform .6s;
   transition-timing-function: ease-in-out;
 }
 
 .home .place .place-introduction.show {
-  opacity: 1;
   transform: translateX(0);
+}
+
+.home .place .place-introduction.show .place-introduction-order-number {
+  opacity: .48;
+  transform: translateY(0);
+}
+
+.home .place .place-introduction.show .place-introduction-content {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .home .place .place-introduction .place-introduction-order-number {
@@ -83,16 +91,26 @@
   font-family: BebasNeueBold;
   font-size: 194px;
   color: #e1e0e0;
-  opacity: 0.48;
+  opacity: 0;
+  transform: translateY(22.4px);
+  transition: opacity .6s, transform .6s;
+  transition-delay: .8s;
 }
 
-.home .place .place-introduction .place-introduction-title {
+.home .place .place-introduction .place-introduction-content {
+  opacity: 0;
+  transform: translateY(140px);
+  transition: opacity .6s, transform .6s;
+  transition-delay: .6s;
+}
+
+.home .place .place-introduction .place-introduction-content .place-introduction-title {
   font-family: PlayfairDisplay-Bold;
   font-size: 71.25px;
   color: #303030;
 }
 
-.home .place .place-introduction .place-introduction-text {
+.home .place .place-introduction .place-introduction-content .place-introduction-text {
   margin-top: 18px;
   width: 80.9%;
   font-family: Poppins-Regular;
@@ -101,7 +119,7 @@
   text-align: justify;
 }
 
-.home .place .place-introduction .read-more {
+.home .place .place-introduction .place-introduction-content .read-more {
   margin-top: 34px;
   font-family: PlayfairDisplay-Bold;
   font-size: 24px;
