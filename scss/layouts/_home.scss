@@ -31,6 +31,7 @@ $place-z-index: 100;
       height: 25%;
       background-image: linear-gradient(0deg, rgb(55,60,122) 0%, rgba(55,60,122,0.41) 59%, rgba(155,158,189,0.09) 91%, rgba(255,255,255,0) 100%);
       z-index: $place-z-index * 2 - 1;
+      transition: opacity .6s;
     }
 
     .place-image {
@@ -55,6 +56,54 @@ $place-z-index: 100;
       color: #ffffff;
       z-index: $place-z-index * 2;
       transition: opacity .3s;
+    }
+
+    .place-introduction {
+      display: none;
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding-top: 226px;
+      padding-left: 118px;
+      width: 40%;
+      height: 100%;
+      background-color: #ffffff;
+
+      &.show {
+        display: block;
+      }
+
+      .place-introduction-order-number {
+        position: absolute;
+        top: 225px;
+        right: 86px;
+        font-family: BebasNeueBold;
+        font-size: 194px;
+        color: #e1e0e0;
+        opacity: 0.48;
+      }
+      
+      .place-introduction-title {
+        font-family: PlayfairDisplay-Bold;
+        font-size: 71.25px;
+        color: #303030;
+      }
+
+      .place-introduction-text {
+        margin-top: 18px;
+        width: 80.9%;
+        font-family: Poppins-Regular;
+        font-size: 22.2px;
+        color: #303030;
+        text-align: justify;
+      }
+
+      .read-more {
+        margin-top: 34px;
+        font-family: PlayfairDisplay-Bold;
+        font-size: 24px;
+        color: #0943ba;
+      }
     }
   }
 
@@ -153,7 +202,7 @@ $place-z-index: 100;
   .place.click {
     width: 100%;
 
-    .order-number, .place-name {
+    &::after, .order-number, .place-name {
       opacity: 0;
     }
   }
