@@ -59,7 +59,6 @@ $place-z-index: 100;
     }
 
     .place-introduction {
-      display: none;
       position: absolute;
       top: 0;
       right: 0;
@@ -68,9 +67,14 @@ $place-z-index: 100;
       width: 40%;
       height: 100%;
       background-color: #ffffff;
+      opacity: 0;
+      transform: translateX(100%);
+      transition: transform .6s;
+      transition-timing-function: ease-in-out;
 
       &.show {
-        display: block;
+        opacity: 1;
+        transform: translateX(0)
       }
 
       .place-introduction-order-number {
