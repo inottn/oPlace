@@ -8,6 +8,18 @@
   overflow: hidden;
 }
 
+.home .logo {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  width: 59px;
+  height: 59px;
+  background-image: url("../images/logo.png");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  z-index: 101;
+}
+
 .home .place {
   flex-shrink: 0;
   position: relative;
