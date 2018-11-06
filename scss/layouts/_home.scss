@@ -1,6 +1,13 @@
 @import "../common/function";
 
 $place-z-index: 100;
+$place-transition-duration: .6s;
+$place-img-transition-duration: .6s;
+$place-name-transition-duration: .3s;
+$place-order-number-transition-duration: .3s;
+$place-introduction-transition-duration: .6s;
+$place-introduction-order-number-transition-duration: .4s;
+$place-introduction-content-transition-duration: .6s;
 
 .home {
   position: relative;
@@ -32,10 +39,12 @@ $place-z-index: 100;
       background-image: linear-gradient(0deg, rgb(55,60,122) 0%, rgba(55,60,122,0.41) 59%, rgba(155,158,189,0.09) 91%, rgba(255,255,255,0) 100%);
       z-index: $place-z-index * 2 - 1;
       transition: opacity .6s;
+      transition-delay: $place-introduction-content-transition-duration + $place-introduction-transition-duration;
     }
 
     .place-image {
       transition: transform .6s;
+      transition-delay: $place-introduction-content-transition-duration + $place-introduction-transition-duration;
     }
 
     .order-number {
@@ -44,7 +53,8 @@ $place-z-index: 100;
       right: 7.2%;
       font-family: BebasNeueBold;
       font-size: 200px;
-      transition: opacity .3s;
+      transition: opacity $place-order-number-transition-duration;
+      transition-delay: $place-introduction-content-transition-duration + $place-introduction-transition-duration + ($place-transition-duration - $place-order-number-transition-duration);
     }
 
     .place-name {
@@ -55,7 +65,8 @@ $place-z-index: 100;
       font-size: 100px;
       color: #ffffff;
       z-index: $place-z-index * 2;
-      transition: opacity .3s;
+      transition: opacity $place-name-transition-duration;
+      transition-delay: $place-introduction-content-transition-duration + $place-introduction-transition-duration + ($place-transition-duration - $place-name-transition-duration);
     }
 
     .place-introduction {
@@ -70,19 +81,36 @@ $place-z-index: 100;
       transform: translateX(100%);
       transition: transform .6s;
       transition-timing-function: ease-in-out;
+      transition-delay: $place-introduction-content-transition-duration;
 
       &.show {
         transform: translateX(0);
+        transition-delay: $place-transition-duration;
 
         .place-introduction-order-number {
           opacity: .48;
           transform: translateY(0);
+          transition-delay: $place-transition-duration + $place-introduction-transition-duration + ($place-introduction-content-transition-duration - $place-introduction-order-number-transition-duration);
         }
 
         .place-introduction-content {
           opacity: 1;
           transform: translateY(0);
+          transition-delay: $place-transition-duration + $place-introduction-transition-duration;
         }
+      }
+
+      .place-introduction-close-btn {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        width: 59px;
+        height: 59px;
+        background-color: transparent;
+        background-image: url("../images/close.png");
+        background-size: 100%;
+        background-repeat: no-repeat;
+        cursor: pointer;
       }
 
       .place-introduction-order-number {
@@ -94,15 +122,14 @@ $place-z-index: 100;
         color: #e1e0e0;
         opacity: 0;
         transform: translateY(22.4px);
-        transition: opacity .6s, transform .6s;
-        transition-delay: .8s;
+        transition: opacity $place-introduction-order-number-transition-duration, transform $place-introduction-order-number-transition-duration;
       }
       
       .place-introduction-content {
         opacity: 0;
         transform: translateY(140px);
-        transition: opacity .6s, transform .6s;
-        transition-delay: .6s;
+        transition: opacity $place-introduction-content-transition-duration, transform $place-introduction-content-transition-duration;
+        
         
         .place-introduction-title {
           font-family: PlayfairDisplay-Bold;
@@ -131,7 +158,7 @@ $place-z-index: 100;
 
   .Paris {
     z-index: $place-z-index;
-    transition: margin-left .6s, width .6s, transform .6s;
+    transition: margin-left $place-transition-duration, width $place-transition-duration;
 
     &.hide-left {
       margin-left: -25%;
@@ -140,6 +167,7 @@ $place-z-index: 100;
     &.click {
       .place-image {
         transform: translateX(8%) scale(1.2);
+        transition-delay: 0s;
       }
     }
 
@@ -155,7 +183,7 @@ $place-z-index: 100;
 
   .Dubai {
     z-index: $place-z-index - 1;
-    transition: margin-left .6s, width .6s, transform .6s;
+    transition: margin-left $place-transition-duration, width $place-transition-duration;
 
     &.hide-left {
       margin-left: -25%;
@@ -164,6 +192,7 @@ $place-z-index: 100;
     &.click {
       .place-image {
         transform: translateX(7%) scale(1.2);
+        transition-delay: 0s;
       }
     }
 
@@ -179,7 +208,7 @@ $place-z-index: 100;
 
   .Brazil {
     z-index: $place-z-index - 2;
-    transition: margin-left .6s, width .6s, transform .6s;
+    transition: margin-left $place-transition-duration, width $place-transition-duration;
 
     &.hide-left {
       margin-left: -25%;
@@ -188,6 +217,7 @@ $place-z-index: 100;
     &.click {
       .place-image {
         transform: translateX(0) scale(1.2);
+        transition-delay: 0s;
       }
     }
 
@@ -203,11 +233,12 @@ $place-z-index: 100;
 
   .India {
     z-index: $place-z-index - 3;
-    transition: width .6s, transform .6s;
+    transition: width $place-transition-duration;
 
     &.click {
       .place-image {
         transform: translateX(9%) scale(1.2);
+        transition-delay: 0s;
       }
     }
 
@@ -221,11 +252,23 @@ $place-z-index: 100;
     }
   }
 
-  .place.click {
-    width: 100%;
+  .place {
+    // 覆盖.Paris .Dubai .Brazil .India transition属性中transition-delay默认值
+    transition-delay: $place-introduction-transition-duration + $place-introduction-content-transition-duration;
 
-    &::after, .order-number, .place-name {
-      opacity: 0;
+    &.hide-left {
+      margin-left: -25%;
+      transition-delay: 0s;
+    }
+
+    &.click {
+      width: 100%;
+      transition-delay: 0s;
+  
+      &::after, .order-number, .place-name {
+        opacity: 0;
+        transition-delay: 0s;
+      }
     }
   }
 }

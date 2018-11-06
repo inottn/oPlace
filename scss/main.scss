@@ -11,6 +11,10 @@ html, body, button, ul, li, h1, h2, h3, h4, h5, h6, p {
   padding: 0;
 }
 
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+
 button, input {
   border: none;
   outline: none;
