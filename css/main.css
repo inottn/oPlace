@@ -172,7 +172,7 @@
 }
 
 .home .Paris .place-image {
-  transform: translateX(-48%);
+  transform: translateX(-21%);
 }
 
 .home .Paris .order-number {
@@ -190,12 +190,12 @@
 }
 
 .home .Dubai.click .place-image {
-  transform: translateX(7%) scale(1.2);
+  transform: translate(7%, -2%) scale(1.2);
   transition-delay: 0s;
 }
 
 .home .Dubai .place-image {
-  transform: translateX(-22%);
+  transform: translate(-22%, -7%);
 }
 
 .home .Dubai .order-number {
@@ -213,12 +213,12 @@
 }
 
 .home .Brazil.click .place-image {
-  transform: translateX(0) scale(1.2);
+  transform: translate(0, -8%) scale(1.2);
   transition-delay: 0s;
 }
 
 .home .Brazil .place-image {
-  transform: translateX(-43%);
+  transform: translate(-22%, -14%);
 }
 
 .home .Brazil .order-number {

@@ -184,7 +184,7 @@ $place-introduction-content-transition-duration: .6s;
     }
 
     .place-image {
-      transform: translateX(-48%);
+      transform: translateX(-21%);
     }
 
     .order-number {
@@ -203,13 +203,13 @@ $place-introduction-content-transition-duration: .6s;
 
     &.click {
       .place-image {
-        transform: translateX(7%) scale(1.2);
+        transform: translate(7%, -2%) scale(1.2);
         transition-delay: 0s;
       }
     }
 
     .place-image {
-      transform: translateX(-22%);
+      transform: translate(-22%, -7%);
     }
 
     .order-number {
@@ -228,13 +228,13 @@ $place-introduction-content-transition-duration: .6s;
 
     &.click {
       .place-image {
-        transform: translateX(0) scale(1.2);
+        transform: translate(0, -8%) scale(1.2);
         transition-delay: 0s;
       }
     }
 
     .place-image {
-      transform: translateX(-43%);
+      transform: translate(-22%, -14%);
     }
 
     .order-number {
