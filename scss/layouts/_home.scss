@@ -40,6 +40,7 @@ $place-introduction-content-transition-duration: .6s;
     background-color: #303030;
     box-shadow: 8px 0px 15px 0px rgba(0, 0, 0, 0.35);
     overflow: hidden;
+    cursor: pointer;
     
     &::after {
       content: "";
@@ -275,6 +276,7 @@ $place-introduction-content-transition-duration: .6s;
 
     &.click {
       width: 100%;
+      cursor: auto;
       transition-delay: 0s;
   
       &::after, .order-number, .place-name {

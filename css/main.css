@@ -30,6 +30,7 @@
   background-color: #303030;
   box-shadow: 8px 0px 15px 0px rgba(0, 0, 0, 0.35);
   overflow: hidden;
+  cursor: pointer;
 }
 
 .home .place::after {
@@ -256,6 +257,7 @@
 
 .home .place.click {
   width: 100%;
+  cursor: auto;
   transition-delay: 0s;
 }
 
