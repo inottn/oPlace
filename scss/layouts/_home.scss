@@ -13,17 +13,17 @@ $place-introduction-content-transition-duration: .6s;
   position: relative;
   display: flex;
   flex-wrap: nowrap;
-  max-width: 1500px;
+  max-width: responsive(1500);
   width: 100%;
   font-size: 0;
   overflow: hidden;
 
   .logo {
     position: absolute;
-    top: 30px;
-    left: 30px;
-    width: 59px;
-    height: 59px;
+    top: responsive(30);
+    left: responsive(30);
+    width: responsive(59);
+    height: responsive(59);
     background-image: url("../images/logo.png");
     background-size: 100%;
     background-repeat: no-repeat;
@@ -34,11 +34,11 @@ $place-introduction-content-transition-duration: .6s;
     flex-shrink: 0;
     position: relative;
     display: inline-block;
-    max-height: 800px;
+    max-height: responsive(800);
     width: 25%;
     height: 53.3vw;
     background-color: #303030;
-    box-shadow: 8px 0px 15px 0px rgba(0, 0, 0, 0.35);
+    box-shadow: responsive(8) responsive(0) responsive(15) responsive(0) rgba(0, 0, 0, 0.35);
     overflow: hidden;
     cursor: pointer;
     
@@ -65,7 +65,7 @@ $place-introduction-content-transition-duration: .6s;
       top: 3%;
       right: 7.2%;
       font-family: BebasNeueBold;
-      font-size: 200px;
+      font-size: responsive(200);
       transition: opacity $place-order-number-transition-duration;
       transition-delay: $place-introduction-content-transition-duration + $place-introduction-transition-duration + ($place-transition-duration - $place-order-number-transition-duration);
     }
@@ -75,7 +75,7 @@ $place-introduction-content-transition-duration: .6s;
       bottom: 8.75%;
       left: 12%;
       font-family: BebasNeueBold;
-      font-size: 100px;
+      font-size: responsive(100);
       color: #ffffff;
       z-index: $place-z-index * 2;
       transition: opacity $place-name-transition-duration;
@@ -86,8 +86,8 @@ $place-introduction-content-transition-duration: .6s;
       position: absolute;
       top: 0;
       right: 0;
-      padding-top: 226px;
-      padding-left: 118px;
+      padding-top: responsive(226);
+      padding-left: responsive(118);
       width: 40%;
       height: 100%;
       background-color: #ffffff;
@@ -115,10 +115,10 @@ $place-introduction-content-transition-duration: .6s;
 
       .place-introduction-close-btn {
         position: absolute;
-        top: 30px;
-        right: 30px;
-        width: 59px;
-        height: 59px;
+        top: responsive(30);
+        right: responsive(30);
+        width: responsive(59);
+        height: responsive(59);
         background-color: transparent;
         background-image: url("../images/close.png");
         background-size: 100%;
@@ -128,41 +128,41 @@ $place-introduction-content-transition-duration: .6s;
 
       .place-introduction-order-number {
         position: absolute;
-        top: 225px;
-        right: 86px;
+        top: responsive(225);
+        right: responsive(86);
         font-family: BebasNeueBold;
-        font-size: 194px;
+        font-size: responsive(194);
         color: #e1e0e0;
         opacity: 0;
-        transform: translateY(22.4px);
+        transform: translateY(responsive(22.4));
         transition: opacity $place-introduction-order-number-transition-duration, transform $place-introduction-order-number-transition-duration;
       }
       
       .place-introduction-content {
         opacity: 0;
-        transform: translateY(140px);
+        transform: translateY(responsive(140));
         transition: opacity $place-introduction-content-transition-duration, transform $place-introduction-content-transition-duration;
         
         
         .place-introduction-title {
           font-family: PlayfairDisplay-Bold;
-          font-size: 71.25px;
+          font-size: responsive(71.25);
           color: #303030;
         }
   
         .place-introduction-text {
-          margin-top: 18px;
+          margin-top: responsive(18);
           width: 80.9%;
           font-family: Poppins-Regular;
-          font-size: 22.2px;
+          font-size: responsive(22.2);
           color: #303030;
           text-align: justify;
         }
   
         .read-more {
-          margin-top: 34px;
+          margin-top: responsive(34);
           font-family: PlayfairDisplay-Bold;
-          font-size: 24px;
+          font-size: responsive(24);
           color: #0943ba;
         }
       }
