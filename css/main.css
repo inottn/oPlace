@@ -266,6 +266,21 @@
   transition-delay: 0s;
 }
 
+@font-face {
+  font-family: BebasNeueBold;
+  src: url("../font/BebasNeue/BebasNeue-Bold.otf");
+}
+
+@font-face {
+  font-family: PlayfairDisplay-Bold;
+  src: url("../font/Playfair/PlayfairDisplay-Bold.otf");
+}
+
+@font-face {
+  font-family: Poppins-Regular;
+  src: url("../font/Poppins/Poppins-Regular.otf");
+}
+
 * {
   box-sizing: border-box;
 }
