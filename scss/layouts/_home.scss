@@ -185,6 +185,8 @@ $place-introduction-content-transition-duration: .6s;
     }
 
     .place-image {
+      width: responsive(1287);
+      height: responsive(856);
       transform: translateX(-21%);
     }
 
@@ -210,6 +212,8 @@ $place-introduction-content-transition-duration: .6s;
     }
 
     .place-image {
+      width: responsive(1297);
+      height: responsive(864);
       transform: translate(-22%, -7%);
     }
 
@@ -235,6 +239,8 @@ $place-introduction-content-transition-duration: .6s;
     }
 
     .place-image {
+      width: responsive(1560);
+      height: responsive(1040);
       transform: translate(-22%, -14%);
     }
 
@@ -256,6 +262,8 @@ $place-introduction-content-transition-duration: .6s;
     }
 
     .place-image {
+      width: responsive(1274);
+      height: responsive(849);
       transform: translateX(-28%);
     }
 

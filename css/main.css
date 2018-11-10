@@ -173,6 +173,8 @@
 }
 
 .home .Paris .place-image {
+  width: 85.8vw;
+  height: 57.06667vw;
   transform: translateX(-21%);
 }
 
@@ -196,6 +198,8 @@
 }
 
 .home .Dubai .place-image {
+  width: 86.46667vw;
+  height: 57.6vw;
   transform: translate(-22%, -7%);
 }
 
@@ -219,6 +223,8 @@
 }
 
 .home .Brazil .place-image {
+  width: 104vw;
+  height: 69.33333vw;
   transform: translate(-22%, -14%);
 }
 
@@ -238,6 +244,8 @@
 }
 
 .home .India .place-image {
+  width: 84.93333vw;
+  height: 56.6vw;
   transform: translateX(-28%);
 }
 
